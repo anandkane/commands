@@ -1,0 +1,1 @@
+grep -roi ./src/test/resources/test-data.sql -e "\w*user\w*" | while read -r line; do if [  = 'user' ]; then echo ; fi ; done
