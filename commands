@@ -1,0 +1,12 @@
+cd ~
+cd /
+cd -
+ctrl+l
+reset
+pushd /var
+popd
+
+ctrl+z send to background
+fg to bring to foreground
+
+!! execute previous command
