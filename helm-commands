@@ -1,0 +1,8 @@
+helm version
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo list
+helm install my-release bitnami/kube-state-metrics -n metrics
+kubectl port-forward --namespace metrics svc/my-release-kube-state-metrics 9100:8080
+helm ls -n metrics
+helm ls
+
