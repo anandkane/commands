@@ -2,6 +2,10 @@ cd ~
 cd /
 cd -
 ctrl+l
+ctrl+u delete everything to the left
+ctrl+k delete everything to the right
+ctrl+a go to start of the line
+ctrl+e go to end of the line
 reset
 pushd /var
 popd
@@ -10,3 +14,15 @@ ctrl+z send to background
 fg to bring to foreground
 
 !! execute previous command
+sudo !! also works
+
+history
+!102
+
+HISTTIMEFORMAT="%Y-%m-%d %T "
+HISTCONTROL=ignoreboth
+
+cd /; cd ~/tutorials; pwd
+truncate -c -s 0 somefile
+
+mount | column --table
