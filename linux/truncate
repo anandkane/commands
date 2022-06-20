@@ -1,0 +1,10 @@
+sed -i '' '50001,$ d' filename
+long format
+sed --in-place '50001,$ d' filename
+sed --in-place=.backup '50001,$ d' filename
+
+create new truncated file
+head -n50000 oldfilename > newfilename
+
+print 1 to 50000 lines
+sed -n '1,50000 p' filename
