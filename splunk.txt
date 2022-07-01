@@ -1,0 +1,15 @@
+* earliest=-24@h latest=-12@h
+
+| top user
+
+rex to create new field
+rex "PWD=?<pwd>[^;]+"
+
+| dedup
+
+
+explore reports tab
+
+404 AND sourcetype="access_combined" | timechart count
+go to visualization tab for better visualization
+save visualization as 'dashboard panel'
