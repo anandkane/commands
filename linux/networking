@@ -1,0 +1,12 @@
+-- get host ip --
+ifconfig -a
+ip addr (ip a)
+hostname -I | awk '{print $1}'
+ip route get 1.2.3.4 | awk '{print $7}'
+nmcli -p device show
+-------------------------------------------
+-- check ports in use --
+sudo apt install net-tools
+sudo netstat -tulpn
+
+sudo apt-get install telnet -y

@@ -1,0 +1,1 @@
+system accounts have UID less than 1000 (configurable in /etc/login.defs)

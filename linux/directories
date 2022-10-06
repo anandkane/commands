@@ -1,0 +1,38 @@
+ls -la
+ls -l
+ls -F - Appends character differentiater
+
+cd - change to home
+cd / - change to root
+cd - - change to previous
+
+mkdir [-p]
+rmdir [-p]
+rm -rf
+
+pushd /var
+popd
+
+
+/root - home for root user
+/bin - binary/executable files
+/etc - system (OS) configuration files
+/home - user home directories
+/opt - optional or third party softwares
+/tmp - temporary space
+/usr - user related programs
+/usr/local - locally installed software that is not part of OS
+/usr/local/app-dir
+
+/var - variable data (most notably log files)
+
+/dev - device files typically controlled by OS and system admins
+/boot - files needed to boot OS
+/mnt
+/proc - information abt running processes
+/export
+/sbin - system admin binaries
+
+/srv/www
+/srv/ftp
+
