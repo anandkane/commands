@@ -1,0 +1,8 @@
+vimdiff file1 file2
+vim -d file1 file2
+ctrl+w (twice) to switch file and use them as normal vi file
+next diff ]c
+prev diff [c
+push diff dp
+get diff  do
+:diffupdate

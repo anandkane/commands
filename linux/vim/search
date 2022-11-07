@@ -1,0 +1,13 @@
+" Show all tabs:
+/\t
+
+" Show trailing whitespace:
+/\s\+$
+
+" Show trailing whitespace only after some text (ignores blank lines):
+/\S\zs\s\+$
+
+" Show spaces before a tab:
+/ \+\ze\t
+
+

@@ -1,0 +1,3 @@
+grep -r "rooturi" . 
+grep -r "rooturi" */target/*
+grep -r "rooturi" */target1/* */target2/*

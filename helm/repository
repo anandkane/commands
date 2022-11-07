@@ -1,0 +1,4 @@
+helm repo index chartmuseum/
+helm repo list
+python -m http.server --bind localhost 9090 --directory ~/tutorials/helm/chartmuseum/ &
+

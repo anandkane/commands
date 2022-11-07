@@ -1,0 +1,2 @@
+vi !$ - use all arguments of previous command
+vi !:1 - use first argument of prevous command
