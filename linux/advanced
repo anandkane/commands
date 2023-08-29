@@ -1,0 +1,1 @@
+cat input.txt | xargs -d '\r' | grep 'external'

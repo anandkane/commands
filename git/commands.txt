@@ -1,0 +1,23 @@
+git stash push -m "<stash message>"
+
+git stash apply
+git stash pop
+
+git stash list
+
+git stash apply stash@{<n>}
+git stash apply <n>
+
+git stash show -p | git apply --reverse
+
+git reflog show HEAD
+git reflog
+
+git reset --hard <commit hash>
+
+git cherry-pick -x <commit hash>
+git cherry-pick <commit hash>
+
+git rebase <source branch>
+git merge --no-ff
+

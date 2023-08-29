@@ -1,8 +1,23 @@
 helm version
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo list
+
 helm install my-release bitnami/kube-state-metrics -n metrics
 kubectl port-forward --namespace metrics svc/my-release-kube-state-metrics 9100:8080
+hem install  bitnami/tomcat --name-template "mytom-{{randAlpha 7 | lower}}"
+
 helm ls -n metrics
 helm ls
 
+helm create chartname
+helm package chartname -d /repo/dir
+helm repo index /repo/dir
+
+helm ls
+helm get values app-name --all
+helm get notes app-name
+helm get manifest app-name
+
+helm package firstchart/ --dependency-update
+
+helm lint tomcat

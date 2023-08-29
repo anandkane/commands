@@ -1,0 +1,24 @@
+yum -option
+yum check-update
+yum history udo/redo/rollback id
+
+-- list package versions
+sudo yum list snapd --showduplicates
+
+--ignore repos
+sudo yum install selinux-policy --disablerep="amzn2-core"
+
+rpm -i package-file
+rpm -U package-file
+
+rpm -ivh package-file
+rpm -rvh package-file
+
+rpm -qa
+rpm -qi package-name
+
+Info about config files for package
+rpm -qc package-name
+
+
+
