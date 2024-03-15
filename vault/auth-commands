@@ -1,0 +1,14 @@
+vault auth enable github 
+vault path-help auth/github
+vault write auth/github/config organization=spearhead-org
+vault write auth/github/map/teams/team1 value=default,applications
+vault auth list 
+unset VAULT_TOKEN 
+vault login -method github token=$(cat github-token)
+
+-- login back as root
+vault login 
+vault token revoke -mode path auth/github
+vault auth disable github/ 
+vault auth list 
+

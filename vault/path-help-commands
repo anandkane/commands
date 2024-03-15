@@ -1,0 +1,7 @@
+vault path-help aws
+vault path-help kv
+
+-- can get help on non existent resources also
+vault path-help aws/creds/no-role
+
+

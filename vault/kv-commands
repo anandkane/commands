@@ -1,0 +1,10 @@
+vault kv put -mount secret/ foo hello=world
+vault kv put -mount secret/ foo hello=world excited=yes
+vault kv  get -mount secret/foo foo
+vault kv get -mount=secret foo
+vault kv get -mount secret/foo -version 1 foo
+vault kv get -mount secret/foo -version 2 foo
+vault kv get -mount secret/foo -field hello foo
+vault kv get -mount secret/foo -format json foo | jq -r .data.data.excited
+vault kv delete -mount secret/foo foo
+vault kv undelete -mount secret -versions 2 foo
