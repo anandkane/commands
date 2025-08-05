@@ -1,0 +1,14 @@
+awk '{print }' employees.csv
+awk -F ',' '{print $1}' employees.csv
+awk -F ',' '{print $1":", "\t" $3}' employees.csv
+
+awk -F ',' 'NR > 1 && $2 < 30 {print $1, $2}' employees.csv -- NR is row number
+-- $0 is entire line
+
+awk -F',' 'NR > 1 {total +=$4} END { print "Total salary: ", total}' employees.csv 
+
+-- Aggregates
+awk -F',' 'NR > 1 {total +=$4} END { print "Total salary: ", total}' employees.csv
+awk -F, nr != 1 {sum += $2; count++} END { print "Average age: ", sum/count} employees.csv
+awk -F , NR != 1 {dept[$3]++} END {for (d in dept) print d, ": ", dept[d] } employees.csv
+awk -F, NR != 1 {salaries[$3] += $4} END {for (dep in salaries) print dep, ": ", salaries[dep]} employees.csv
