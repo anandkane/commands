@@ -12,3 +12,21 @@ awk -F',' 'NR > 1 {total +=$4} END { print "Total salary: ", total}' employees.c
 awk -F, nr != 1 {sum += $2; count++} END { print "Average age: ", sum/count} employees.csv
 awk -F , NR != 1 {dept[$3]++} END {for (d in dept) print d, ": ", dept[d] } employees.csv
 awk -F, NR != 1 {salaries[$3] += $4} END {for (dep in salaries) print dep, ": ", salaries[dep]} employees.csv
+
+awk -F, NR != 1 {total += $4; count++;} END {print "Average salary: ", total/count} employees.csv
+awk -F, NR != 1 && $3 == "Engineering" { total += $4 } END { print "Total salary of Engineering dept: ", total} employees.csv
+awk -F',' 'NR != 1 && $3 != "Interns" {depEmployees[$3]++} END { for(dep in depEmployees) print dep, ": ", depEmployees[dep]}' employees.csv
+
+
+awk -F, BEGIN {"Processing salaries..."} NR != 1 {total += $4} END {print "Total salary: ", total} employees.csv
+awk -F, BEGIN {"Department-wise total salaries..."} NR != 1 {salaries[$3] += $4} END { for(d in salaries) printf("%-15s: %d\n", d, salaries[d])} employees.csv
+
+
+Custom field separators
+awk -F: { print $1, $6 } /etc/passwd
+awk -F\t { print $1, $3 } data.tsv
+awk { print $1, $NF } log.txt -- Default separator is space
+awk -F[ \t]+ { print $1, $3 } messy_data.txt -- RegEx as field separator
+awk -F[;,] { print $1, $2 } data.txt -- Multiple delimiters
+
+
