@@ -30,3 +30,35 @@ awk -F[ \t]+ { print $1, $3 } messy_data.txt -- RegEx as field separator
 awk -F[;,] { print $1, $2 } data.txt -- Multiple delimiters
 
 
+NR - Number of Records - Current input record number (across all files)
+FNR - File Number of Records - Current record number within the current file (resets for each file)
+NF - Number of Fields - Number of fields in the current record
+$0 - Entire Line - Entire input line (the whole record)
+$1..$n - Field n - Field values: $1 = first field, $2 = second, ..., $NF = last field
+FS - Field Separator - Input field separator (default is space)
+OFS - Output Field Separator - Separator used between output fields (default is space)
+RS - Record Separator - Input record separator (default is newline)
+ORS - Output Record Separator - Output line terminator (default is newline)
+FILENAME - (Current File Name) - Name of the file currently being read
+ARGC - Argument Count - Number of command-line arguments passed to awk
+ARGV - Argument Vector - Array of command-line arguments
+ENVIRON - Environment Variables - Associative array of environment variables (e.g. ENVIRON["PATH"])
+CONVFMT - Conversion Format - Format for number-to-string conversion (default: %.6g)
+OFMT - Output Format - Format for printing numbers (default: %.6g)
+IGNORECASE - Ignore Case - If set to 1, makes all string comparisons case-insensitive (GNU awk only)
+ERRNO - Error Number - Stores the error message from the last system call
+
+
+
+-- For the text, note the use of $NF
+one two three
+alpha beta
+x y z w
+
+awk '{ print "NF =", NF, "Last field =", $NF }' file.txt
+
+NF = 3 Last field = three
+NF = 2 Last field = beta
+NF = 4 Last field = w
+
+
